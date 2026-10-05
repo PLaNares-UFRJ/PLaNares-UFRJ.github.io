@@ -1,0 +1,23 @@
+# The URL the site will be built for
+base_url = "https://planares-ufrj.github.io"
+theme = "linkita"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = false
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+header_menu_name = "header_links"
+[extra.menus]
+header_links = [
+	{name="Home", url="@base/"},
+	{name="Members", url="@base/members/"},
+	{name="About", url="@base/about/"},
+]
