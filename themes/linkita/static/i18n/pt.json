@@ -1,0 +1,98 @@
+{
+  "word_translations": {
+    "value": "Traduções"
+  },
+  "taxonomy_tags": {
+    "value": "Etiquetas"
+  },
+  "taxonomy_categories": {
+    "value": "Categorias"
+  },
+  "taxonomy_authors": {
+    "value": "Autores"
+  },
+  "act_go_to_home": {
+    "value": "Voltar para a página inicial"
+  },
+  "act_switch_color_scheme": {
+    "value": "Mudar esquema de cor"
+  },
+  "act_switch_to_light": {
+    "value": "Trocar para tema claro"
+  },
+  "act_switch_to_dark": {
+    "value": "Trocar para tema escuro"
+  },
+  "act_reset_color_scheme": {
+    "value": "Resetar esquema de cor"
+  },
+  "act_search": {
+    "value": "Abrir pesquisa"
+  },
+  "act_go_to_translation": {
+    "value": "Ir para tradução da página"
+  },
+  "act_show_translations": {
+    "value": "Mostrar tradução das páginas"
+  },
+  "act_menu": {
+    "value": "Toggle menu"
+  },
+  "footer_made_with": {
+    "value": "Feito com Zola"
+  },
+  "footer_built_with": {
+    "value": "Construído com Zola"
+  },
+  "footer_theme_name": {
+    "value": "Linkita"
+  },
+  "title_page": {
+    "value": "Página $NUM"
+  },
+  "word_prev_page": {
+    "value": "Página anterior"
+  },
+  "word_next_page": {
+    "value": "Próxima página"
+  },
+  "word_toc": {
+    "value": "Tabela de conteúdos"
+  },
+  "word_minute": {
+    "value": "min"
+  },
+  "word_minutes": {
+    "value": "min"
+  },
+  "word_words": {
+    "value": "palavras"
+  },
+  "word_more": {
+    "value": "Mais &raquo;"
+  },
+  "left_arrow": {
+    "value": "&lsaquo;"
+  },
+  "right_arrow": {
+    "value": "&rsaquo;"
+  },
+  "hellip": {
+    "value": "&hellip;"
+  },
+  "error_not_found": {
+    "value": "404: Página não encontrada"
+  },
+  "future_search_input": {
+    "value": "Pesquisa neste site. Resultados vão carregar conforme você digita."
+  },
+  "future_back_to_top": {
+    "value": "Voltar ao topo"
+  },
+  "future_copy": {
+    "value": "copiar"
+  },
+  "future_copied": {
+    "value": "copiado!"
+  }
+}

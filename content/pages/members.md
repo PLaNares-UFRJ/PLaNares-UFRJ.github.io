@@ -1,5 +1,5 @@
 +++
-title = "Members"
-description = "members"
+title = "Membros"
+description = "membros"
 path = "members"
 +++

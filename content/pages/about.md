@@ -1,5 +1,5 @@
 +++
-title = "About us"
-description = "about the group"
+title = "Sobre nós"
+description = "Sobre o grupo"
 path = "about"
 +++
