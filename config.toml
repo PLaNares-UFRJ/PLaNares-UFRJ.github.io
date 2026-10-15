@@ -19,18 +19,21 @@ theme = "catppuccin-mocha"
 
 [extra]
 header_menu_name = "menu"
+
 [extra.languages.en]
 header_menu_name = "menu_en"
 
 [extra.menus]
 menu = [
-	{name="Página inicial", url="@base/"},
-	{name="Membros", url="@base/members/"},
+	#{name="Página inicial", url="@base/"},
 	{name="Sobre", url="@base/about/"},
+	{name="Integrantes", url="@base/members/"},
+	{name="Pesquisas", url="@base/research/"},
 ]
 
 menu_en = [
-	{name="Home", url="@base/"},
-	{name="Members", url="@base/members/"},
+	#{name="Home", url="@base/"},
 	{name="About", url="@base/about/"},
+	{name="Members", url="@base/members/"},
+	{name="Research", url="@base/research/"},
 ]

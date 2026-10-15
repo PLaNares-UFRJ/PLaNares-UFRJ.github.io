@@ -1,0 +1,80 @@
+/* ===== Estilos das páginas do grupo (integrantes, pesquisas, pesquisa individual) ===== */
+
+/* Borda e cor neutras: funcionam no modo claro e escuro */
+:root { --grupo-borda: rgba(128,128,128,.35); }
+ 
+/* ---------- Botões (compartilhado) ---------- */
+.botoes a, .botoes summary,
+.cartao .ver,
+.links a {
+  display: inline-block; padding: .35rem .9rem;
+  border: 1px solid currentColor; border-radius: 6px;
+  text-decoration: none; color: inherit; font-size: .9rem; cursor: pointer;
+}
+.botoes a:hover, .botoes summary:hover, .cartao .ver:hover, .links a:hover { opacity: .6; }
+
+/* ---------- Página de integrantes ---------- */
+.membro { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid var(--grupo-borda); }
+.membro:last-of-type { border-bottom: none; }
+.membro img { width: 140px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+.membro h2 { margin: 0; }
+.membro .papel { margin: .2rem 0 .8rem; opacity: .7; }
+.botoes { display: flex; flex-wrap: wrap; gap: .5rem; align-items: flex-start; }
+.botoes summary { list-style: none; }
+.botoes summary::-webkit-details-marker { display: none; }
+.botoes details ul { margin: .5rem 0 0; padding-left: 1.2rem; }
+
+/* ---------- Página de pesquisas ---------- */
+.pesquisas, .areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.cartao { display: flex; flex-direction: column; padding: 1.25rem; border: 1px solid var(--grupo-borda); border-radius: 8px; }
+.cartao h2 { margin: 0 0 .5rem; font-size: 1.25rem; }
+.cartao .resumo { margin: 0 0 1rem; opacity: .85; }
+.cartao .participantes { margin: 0 0 1.25rem; font-size: .9rem; }
+.cartao .participantes span { opacity: .7; }
+.cartao .participantes a:not(:last-child)::after { content: " · "; display: inline-block; }
+.cartao .ver { margin-top: auto; align-self: flex-start; }
+ 
+/* ---------- Página individual de cada pesquisa ---------- */
+.ficha { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; padding: 1rem 1.25rem; margin: 1rem 0 2rem; border: 1px solid var(--grupo-borda); border-radius: 8px; }
+.ficha span { display: block; font-size: .8rem; opacity: .65; }
+.ficha .status { display: inline-block; padding: .1rem .6rem; border: 1px solid currentColor; border-radius: 999px; font-size: .85rem; font-weight: normal; }
+.equipe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
+.pessoa { display: flex; gap: .75rem; align-items: center; padding: .75rem; border: 1px solid var(--grupo-borda); border-radius: 8px; text-decoration: none; color: inherit; }
+.pessoa:hover { opacity: .6; }
+.pessoa img { width: 56px; height: 56px; object-fit: cover; border-radius: 50%; flex-shrink: 0; }
+.pessoa strong { display: block; }
+.pessoa span { font-size: .85rem; opacity: .7; }
+.links a { margin: 0 .5rem .5rem 0; }
+ 
+ 
+/* ---------- Página inicial ---------- */
+.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: center; margin: 1rem 0 3rem; }
+.hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.hero h1 { margin: 0; font-size: clamp(2.2rem, 6vw, 3.5rem); line-height: 1.1; }
+.hero .sub { margin: .6rem 0 1.25rem; opacity: .7; font-size: 1.1rem; }
+.novidades { list-style: none; margin: 1rem 0 2rem; padding: 0; }
+.novidades li { display: flex; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--grupo-borda); }
+.novidades li:last-child { border-bottom: none; }
+.novidades time { flex-shrink: 0; min-width: 5.5rem; opacity: .65; font-size: .9rem; }
+.contato { margin: 1rem 0 2rem; }
+.contato .item { display: flex; gap: .75rem; align-items: flex-start; margin-bottom: .75rem; }
+.contato svg { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; }
+.contato address { font-style: normal; }
+ 
+/* ---------- Rodapé ---------- */
+.rodape { margin-top: 3rem; padding: 2rem 1rem; background: rgba(128,128,128,.15); }
+.rodape-conteudo { max-width: 800px; margin: 0 auto; }
+.rodape h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+.rodape .contato { margin: 0; }
+.rodape .creditos { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--grupo-borda); font-size: .85rem; opacity: .8; }
+/* Esconde o rodapé padrão do tema (o nosso fica no lugar) */
+footer:not(.rodape) { display: none; }
+ 
+/* ---------- Imagem no cabeçalho ---------- */
+.logo-cabecalho { display: inline-flex; align-items: center; margin-right: 1rem; }
+.logo-cabecalho img { height: 36px; width: auto; }
+ 
+/* ---------- Telas pequenas (responsividade) ---------- */
+@media (max-width: 700px) { .hero { grid-template-columns: 1fr; } .integrantes { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .membro { grid-template-columns: 90px 1fr; gap: 1rem; } .membro > img { width: 90px; height: 90px; } }
+
