@@ -1,10 +1,22 @@
 +++
-title = "Research"
+title = "Ongoing researches"
 description = "research"
-path = "research.en"
+path = "en/research"
 +++
 
 <link rel="stylesheet" href="/css/estilos.css">
 
-<div class="cartao"> <h2>Título da Pesquisa A</h2> <p class="resumo">Breve resumo da pesquisa em duas ou três linhas, explicando o objetivo e o tema principal.</p> <p class="participantes"><span>Participantes:</span> <a href="/members/#maria-silva">Maria Silva</a><a href="/integrantes/#joao-souza">João Souza</a></p> <a class="ver" href="/pesquisa/pesquisa-a/">Ver pesquisa →</a> </div>
-<div class="cartao"> <h2>Título da Pesquisa B</h2> <p class="resumo">Breve resumo da segunda pesquisa, também curto e direto.</p> <p class="participantes"><span>Participantes:</span> <a href="/members/#maria-silva">Maria Silva</a></p> <a class="ver" href="/pesquisa/pesquisa-b/">Ver pesquisa →</a> </div> </div>
+<div class="cartao">
+    <h2>Research A title</h2>
+    <p class="resumo">Brief abstract of two or three lines, explaining the objective and main theme.</p>
+    <p class="participantes"><span>Participants:</span>
+    <a href="/members/#maria-silva">Maria Silva</a>
+    <a href="/integrantes/#joao-souza">João Souza</a></p> <a class="ver" href="/pesquisa/pesquisa-a/">See research →</a>
+</div>
+<div class="cartao">
+    <h2>Research B title</h2>
+    <p class="resumo">Brief abstract of two or three lines, explaining the objective and main theme.</p>
+    <p class="participantes"><span>Participants:</span>
+    <a href="/members/#maria-silva">Maria Silva</a></p>
+    <a class="ver" href="/pesquisa/pesquisa-b/">See research →</a>
+</div>
