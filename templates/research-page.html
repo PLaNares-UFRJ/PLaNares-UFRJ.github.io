@@ -1,0 +1,100 @@
+{% extends "page.html" %}
+
+{% block main %}
+<article>
+  {% include "injects/page_start.html" %}
+  <header class="mb-16">
+    <h1 class="my-0! pb-3">{{ page.title }}</h1>
+  </header>
+  <link rel="stylesheet" href="/css/estilos.css">
+  
+  {% set pagina_membros = get_page(path="pages/members.md") %}
+  
+  <div class="ficha">
+    {% if page.extra.status %}
+    <div><span>Situação</span><b class="status">{{ page.extra.status }}</b></div>
+  {% endif %}
+
+  {% if page.extra.period %}
+    <div><span>Período</span>{{ page.extra.period }}</div>
+  {% endif %}
+
+  {% if page.extra.area %}
+    <div><span>Área</span>{{ page.extra.area }}</div>
+  {% endif %}
+
+  {% if page.extra.coordinators %}
+    <div>
+      <span>Coordenação</span>
+      {% for coord_id in page.extra.coordinators %}
+        {% for membro in pagina_membros.extra.membros %}
+          {% if membro.id == coord_id %}
+            <a href="/members/#{{ membro.id }}">{{ membro.nome }}</a>{% if coord_id != page.extra.coordinators | last %}, {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if page.extra.funding %}
+    <div><span>{{ trans(key="financiamento") }}</span>{{ page.extra.funding }}</div>
+  {% endif %}
+  </div>
+
+  
+  <div class="conteudo-markdown">
+    {{ page.content | safe }}
+  </div>
+  
+  {% if page.extra.members %}
+    <h2>Equipe</h2>
+    <div class="equipe mb-8">
+      {% for member_id in page.extra.members %}
+        {% for membro in pagina_membros.extra.membros %}
+          {% if membro.id == member_id %}
+            <a class="pessoa" href="/members/#{{ membro.id }}">
+              <img src="{{ membro.foto }}" alt="Foto de {{ membro.nome }}">
+              <div>
+                <strong>{{ membro.nome }}</strong>
+                <span>{{ membro.papel }}</span>
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  
+  {% if page.extra.publications %}
+    <h2>Publicações</h2>
+    <ul class="publicacoes mb-8">
+      {% for pub in page.extra.publications %}
+        <li>{{ pub | markdown(inline=true) | safe }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+  {% if page.extra.links %}
+    <h2>Materiais e links</h2>
+    <div class="links mb-8">
+      {% for item in page.extra.links %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.texto }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+  
+  {% if page.extra.partners %}
+    <h2>Parceiros e apoio</h2>
+    <div class="parceiros mb-8">
+      <p>{{ page.extra.partners | markdown(inline=true) | safe }}</p>
+    </div>
+  {% endif %}
+  
+  <div class="voltar mt-12">
+    <a href="/research/">← Voltar para Pesquisas</a>
+  </div>
+  {% include "injects/page_end.html" %}
+</article>
+{% endblock main %}
+
+

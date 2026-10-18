@@ -1,0 +1,34 @@
+{% extends "page.html" %}
+
+{% block main %}
+<article>
+  {% include "injects/page_start.html" %}
+  <header class="mb-16">
+    <h1 class="my-0! pb-3">{{ page.title }}</h1>
+  </header>
+<link rel="stylesheet" href="/css/estilos.css">
+
+<div class="researches-container">
+
+  {% set secao_pesquisas = get_section(path="researches/_index.md") %}
+  {% set pagina_membros = get_page(path="pages/members.md") %}
+  
+  {% for research in secao_pesquisas.pages %}
+    <div class="cartao">
+        <h2>{{ research.title }}</h2>
+        <p class="resumo"> {{ research.extra.abstract }}</p>
+        <p class="participantes"><span>{{ trans(key="participantes") }} </span>
+        {% for member_id in research.extra.members %}
+          {% for membro in pagina_membros.extra.membros %}
+            {% if membro.id == member_id %}
+              <a href="/members/#{{ membro.id }}">{{ membro.nome }}</a>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        </p>
+          <a class="ver" href="/research/{{ research.slug }}">{{ trans(key="ver-pesquisa") }}</a>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock main %}

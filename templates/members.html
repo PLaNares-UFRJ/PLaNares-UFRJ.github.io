@@ -1,0 +1,41 @@
+{% extends "page.html" %}
+
+{% block main %}
+<article>
+  {% include "injects/page_start.html" %}
+  <header class="mb-16">
+    <h1 class="my-0! pb-3">{{ page.title }}</h1>
+  </header>
+<link rel="stylesheet" href="/css/estilos.css">
+
+
+<div class="membros-container">
+  {% set membros_ordenados = page.extra.membros | sort(attribute="nome") %}
+  
+  {% for membro in membros_ordenados %}
+    <div class="membro" id="{{ membro.id }}">
+      <img src="{{ membro.foto }}" alt="Foto de {{ membro.nome }}">
+      <div>
+        <h2>{{ membro.nome }}</h2>
+        <p class="papel">{{ membro.papel }}</p>
+        <div class="botoes">
+          <a href="http://lattes.cnpq.br/{{ membro.lattes }}" target="_blank" rel="noopener">{{ trans(key="lattes") }}</a>
+            <a href="{{ membro.contato }}">{{ trans(key="contato") }}</a>
+            <details>
+                <summary>{{ trans(key="projetos") }}</summary>
+                <ul>
+                    <li>
+                        <a href="/pesquisas/pesquisa-a/">Projeto A</a>
+                    </li>
+                    <li>
+                        <a href="/pesquisas/pesquisa-a/">Projeto B</a>
+                    </li>
+                </ul>
+            </details>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock main %}

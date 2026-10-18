@@ -37,3 +37,20 @@ menu_en = [
 	{name="Members", url="@base/members/"},
 	{name="Research", url="@base/research/"},
 ]
+
+
+[languages.pt.translations]
+contato = "Contato"
+lattes = "Lattes"
+ver-pesquisa = "Ver pesquisa →"
+participantes = "Participantes"
+financiamento = "Financiamento"
+projetos = "Projetos"
+
+[languages.en.translations]
+contato = "Contact"
+lattes = "Lattes"
+ver-pesquisa = "See research →"
+participantes = "Participants"
+financiamento = "Funding"
+projetos = "Projects"
