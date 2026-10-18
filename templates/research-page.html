@@ -12,20 +12,20 @@
   
   <div class="ficha">
     {% if page.extra.status %}
-    <div><span>Situação</span><b class="status">{{ page.extra.status }}</b></div>
+    <div><span>{{ trans(key="status") }}</span><b class="status">{{ page.extra.status }}</b></div>
   {% endif %}
 
   {% if page.extra.period %}
-    <div><span>Período</span>{{ page.extra.period }}</div>
+    <div><span>{{ trans(key="periodo") }}</span>{{ page.extra.period }}</div>
   {% endif %}
 
   {% if page.extra.area %}
-    <div><span>Área</span>{{ page.extra.area }}</div>
+    <div><span>{{ trans(key="area") }}</span>{{ page.extra.area }}</div>
   {% endif %}
 
   {% if page.extra.coordinators %}
     <div>
-      <span>Coordenação</span>
+      <span>{{ trans(key="coordenacao") }}</span>
       {% for coord_id in page.extra.coordinators %}
         {% for membro in pagina_membros.extra.membros %}
           {% if membro.id == coord_id %}
@@ -47,7 +47,7 @@
   </div>
   
   {% if page.extra.members %}
-    <h2>Equipe</h2>
+    <h2>{{ trans(key="equipe") }}</h2>
     <div class="equipe mb-8">
       {% for member_id in page.extra.members %}
         {% for membro in pagina_membros.extra.membros %}
@@ -66,7 +66,7 @@
   {% endif %}
   
   {% if page.extra.publications %}
-    <h2>Publicações</h2>
+    <h2>{{ trans(key="publicacoes") }}</h2>
     <ul class="publicacoes mb-8">
       {% for pub in page.extra.publications %}
         <li>{{ pub | markdown(inline=true) | safe }}</li>
@@ -75,7 +75,7 @@
   {% endif %}
   
   {% if page.extra.links %}
-    <h2>Materiais e links</h2>
+    <h2>{{ trans(key="materiais-e-links") }}</h2>
     <div class="links mb-8">
       {% for item in page.extra.links %}
         <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.texto }}</a>
@@ -84,14 +84,14 @@
   {% endif %}
   
   {% if page.extra.partners %}
-    <h2>Parceiros e apoio</h2>
+    <h2>{{ trans(key="parceiros-e-apoio") }}</h2>
     <div class="parceiros mb-8">
       <p>{{ page.extra.partners | markdown(inline=true) | safe }}</p>
     </div>
   {% endif %}
   
   <div class="voltar mt-12">
-    <a href="/research/">← Voltar para Pesquisas</a>
+    <a href="/research/">← {{ trans(key="voltar-para-pesquisas") }}</a>
   </div>
   {% include "injects/page_end.html" %}
 </article>

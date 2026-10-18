@@ -10,8 +10,19 @@
 
 <div class="researches-container">
 
+  {% if lang == config.default_language %}
+    {% set secao_path = "researches/_index.md" %}
+    {% set membros_path = "pages/members.md" %}
+  {% else %}
+    {% set secao_path = "researches/_index." ~ lang ~ ".md" %}
+    {% set membros_path = "pages/members." ~ lang ~ ".md" %}
+  {% endif %}
+
   {% set secao_pesquisas = get_section(path="researches/_index.md") %}
   {% set pagina_membros = get_page(path="pages/members.md") %}
+  
+  {% set prefixo = "" %}
+  {% if lang != config.default_language %}{% set prefixo = "/" ~ lang %}{% endif %}
   
   {% for research in secao_pesquisas.pages %}
     <div class="cartao">
@@ -21,12 +32,12 @@
         {% for member_id in research.extra.members %}
           {% for membro in pagina_membros.extra.membros %}
             {% if membro.id == member_id %}
-              <a href="/members/#{{ membro.id }}">{{ membro.nome }}</a>
+              <a href="{{ prefixo }}/members/#{{ membro.id }}">{{ membro.nome }}</a>
             {% endif %}
           {% endfor %}
         {% endfor %}
         </p>
-          <a class="ver" href="/research/{{ research.slug }}">{{ trans(key="ver-pesquisa") }}</a>
+          <a class="ver" href="{{ prefixo }}/research/{{ research.slug }}">{{ trans(key="ver-pesquisa") }}</a>
     </div>
   {% endfor %}
 </div>

@@ -37,10 +37,6 @@ links = [
 # Texto de parceiros e apoio
 partners = "Liste instituições parceiras e agências de fomento que apoiam a pesquisa."
 +++
-
-{% if lang == "en" %}
-Here goes the main body content written in English...
-{% else %}
 ## Objetivos
 
 **Objetivo geral:** descreva em uma frase o propósito principal da pesquisa.
@@ -59,4 +55,3 @@ Explique brevemente como a pesquisa é conduzida: etapas, técnicas, ferramentas
 
 - **2026:** descreva um resultado ou marco já alcançado.
 - **2025:** descreva outro resultado ou marco.
-{% endif %}
