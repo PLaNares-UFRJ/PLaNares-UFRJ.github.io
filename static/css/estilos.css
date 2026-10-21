@@ -78,3 +78,26 @@ footer:not(.rodape) { display: none; }
 @media (max-width: 700px) { .hero { grid-template-columns: 1fr; } .integrantes { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .membro { grid-template-columns: 90px 1fr; gap: 1rem; } .membro > img { width: 90px; height: 90px; } }
 
+
+.novidades li { flex-wrap: wrap; }
+
+/* Carrossel de fotos */
+.carrossel {
+  flex: 0 0 100%;
+  display: flex;
+  gap: .75rem;
+  margin-top: .25rem;
+  padding-bottom: .5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.carrossel img {
+  flex: 0 0 auto;
+  width: 280px;
+  max-width: 85%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  scroll-snap-align: start;
+}
+

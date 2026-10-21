@@ -33,7 +33,14 @@ page_template = "pages.html"
 
 <ul class="novidades">
     <li><time datetime="2026-11-24">24/11/2026</time><span>Apresentação no 1º congresso internacional em ciência de dados e inteligência artificial.</span></li>
-    <li><time datetime="2026-10-07">07/10/2026</time><span>Apresentação na 15ª SIAC da UFRJ.</span></li>
+    <li><time datetime="2026-10-07">07/10/2026</time><span>Apresentação na 15ª SIAC da UFRJ.</span>
+    <div class="carrossel">
+	<img src="/img/carrossel/siac1.jpeg" alt="Apresentação do trabalho" loading="lazy">
+	<img src="/img/carrossel/siac2.jpeg" alt="Apresentação do trabalho" loading="lazy">
+	<img src="/img/carrossel/siac3.jpeg" alt="Apresentação do trabalho" loading="lazy">
+	</div>
+    </li>
+
 </ul>
 
 
