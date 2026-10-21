@@ -6,7 +6,7 @@ path="research/pesquisa-a"
 
 [extra]
 # Membros e coordenadores
-members = ["joao-souza", "maria-silva"]
+members = ["maria-silva"]
 coordinators = ["maria-silva"]
 
 # Status e infos básicas

@@ -11,6 +11,8 @@
 
 <div class="membros-container">
   {% set membros_ordenados = page.extra.membros | sort(attribute="nome") %}
+  {% set secao = get_section(path="researches/_index.md") %}
+  
   
   {% for membro in membros_ordenados %}
     <div class="membro" id="{{ membro.id }}">
@@ -20,18 +22,29 @@
         <p class="papel">{{ membro.papel }}</p>
         <div class="botoes">
           <a href="http://lattes.cnpq.br/{{ membro.lattes }}" target="_blank" rel="noopener">{{ trans(key="lattes") }}</a>
-            <a href="{{ membro.contato }}">{{ trans(key="contato") }}</a>
+            <a href="https://mail.google.com/mail/?view=cm&to={{ membro.contato }}">{{ trans(key="contato") }}</a>
+            	{% set membro_id = membro.id %}
+		{% set_global total = 0 %}
+		{% for projeto in secao.pages %}
+	    		{% if projeto.extra.members and membro_id in projeto.extra.members %}
+				{% set_global total = total + 1 %}
+	    		{% endif %}
+		{% endfor %}
+            
+           {% if total > 0 %}
             <details>
                 <summary>{{ trans(key="projetos") }}</summary>
                 <ul>
-                    <li>
-                        <a href="/pesquisas/pesquisa-a/">Projeto A</a>
-                    </li>
-                    <li>
-                        <a href="/pesquisas/pesquisa-a/">Projeto B</a>
-                    </li>
+		{% for projeto in secao.pages %}
+		    {% if projeto.extra.members and membro_id in projeto.extra.members %}
+		    <li>
+		        <a href="{{ projeto.permalink }}">{{ projeto.title }}</a>
+		    </li>
+		    {% endif %}
+		{% endfor %}
                 </ul>
             </details>
+            {% endif %}
         </div>
       </div>
     </div>
