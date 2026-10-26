@@ -16,8 +16,8 @@ page_template = "pages.html"
 
 <div class="areas">
     <div class="cartao">
-        <h2>Area 1</h2>
-        <p class="resumo">(little text)</p>
+        <h2>Sentiment Analysis</h2>
+        <p class="resumo">A process for analyzing large volumes of text to determine whether the text expresses a positive, negative, or neutral sentiment.</p>
     </div>
     <div class="cartao">
         <h2>Area 2</h2>
